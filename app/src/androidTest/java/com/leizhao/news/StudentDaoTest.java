@@ -48,6 +48,8 @@ public class StudentDaoTest {
         testAddTeacher();
     }
 
+
+
     /**
      * 测试-添加教师
      */
@@ -143,7 +145,7 @@ public class StudentDaoTest {
         // 开始插入数据
         IStudentDAO studentDao = new StudentDaoImpl(appContext);
         for (int i = 0; i < insertCount; i++) {
-            studentDao.addStudent(new Student("张三", i, "大一(" + i + ")班"));
+//            studentDao.addStudent(new Student("张三", i, "大一(" + i + ")班"));
         }
         countRunTime("插入");
         Log.d(TAG, "=====================================================");

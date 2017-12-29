@@ -16,25 +16,27 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(String name, int age, String className) {
+    public Student(String name, int age, int teacherId, int classId) {
         this.name = name;
         this.age = age;
-        this.className = className;
+        this.teacherId = teacherId;
+        this.classId = classId;
     }
 
-    public int studentId;
-    public String name;
-    public int age;
-    public String className;
-
+    public int studentId;           // 学生id
+    public String name;             // 学生姓名
+    public int age;                 // 学生年龄
+    public int teacherId;           // 教师id
+    public int classId;             // 班级id
 
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + studentId +
+                "studentId=" + studentId +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", className='" + className + '\'' +
+                ", teacherId=" + teacherId +
+                ", classId=" + classId +
                 '}';
     }
 }

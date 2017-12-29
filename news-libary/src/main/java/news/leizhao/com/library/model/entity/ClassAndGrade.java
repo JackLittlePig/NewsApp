@@ -16,6 +16,9 @@ public class ClassAndGrade implements Serializable {
     public String className;
     public int classId;
 
+    public ClassAndGrade() {
+    }
+
     public ClassAndGrade(String className, int classId) {
         this.className = className;
         this.classId = classId;

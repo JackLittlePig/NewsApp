@@ -45,7 +45,8 @@ public class StudentDaoImpl implements IStudentDAO {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", student.name);
         contentValues.put("age", student.age);
-        contentValues.put("classname", student.className);
+        contentValues.put("classId", student.classId);
+        contentValues.put("teacherId", student.teacherId);
         db.insert(SQLiteCommand.STUDUENT_TABLE_NAME, null, contentValues);
         db.close();
 
@@ -73,7 +74,8 @@ public class StudentDaoImpl implements IStudentDAO {
             student.studentId = cursor.getInt(cursor.getColumnIndex("studentId"));
             student.name = cursor.getString(cursor.getColumnIndex("name"));
             student.age = cursor.getInt(cursor.getColumnIndex("age"));
-            student.className = cursor.getString(cursor.getColumnIndex("classname"));
+            student.classId = cursor.getInt(cursor.getColumnIndex("classId"));
+            student.teacherId = cursor.getInt(cursor.getColumnIndex("teacherId"));
             students.add(student);
         }
         db.close();
@@ -103,7 +105,8 @@ public class StudentDaoImpl implements IStudentDAO {
             student.studentId = cursor.getInt(cursor.getColumnIndex("studentId"));
             student.name = cursor.getString(cursor.getColumnIndex("name"));
             student.age = cursor.getInt(cursor.getColumnIndex("age"));
-            student.className = cursor.getString(cursor.getColumnIndex("classname"));
+            student.classId = cursor.getInt(cursor.getColumnIndex("classId"));
+            student.teacherId = cursor.getInt(cursor.getColumnIndex("teacherId"));
             students.add(student);
         }
         db.close();

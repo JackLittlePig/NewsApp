@@ -47,7 +47,8 @@ public class SQLiteStudentDaoImpl extends StudentDaoImpl {
             student.studentId = cursor.getInt(cursor.getColumnIndex("id"));
             student.name = cursor.getString(cursor.getColumnIndex("name"));
             student.age = cursor.getInt(cursor.getColumnIndex("age"));
-            student.className = cursor.getString(cursor.getColumnIndex("classname"));
+//            student.classId = cursor.getString(cursor.getColumnIndex("classname"));
+//            student.teacherId = cursor.getString(cursor.getColumnIndex("classname"));
             students.add(student);
         }
         return students;
