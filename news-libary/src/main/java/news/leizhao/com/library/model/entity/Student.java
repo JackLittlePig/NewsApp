@@ -1,11 +1,11 @@
-package news.leizhao.com.library.db.model;
+package news.leizhao.com.library.model.entity;
 
 import java.io.Serializable;
 
 /**
  * Title:Student
  * <p>
- * Description:高血压随访记录
+ * Description:学生实体
  * </p>
  * Author 雷钊
  * Date 2017/12/28 17:12
@@ -22,7 +22,7 @@ public class Student implements Serializable {
         this.className = className;
     }
 
-    public int id;
+    public int studentId;
     public String name;
     public int age;
     public String className;
@@ -31,7 +31,7 @@ public class Student implements Serializable {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+                "id=" + studentId +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", className='" + className + '\'' +

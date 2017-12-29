@@ -1,4 +1,4 @@
-package news.leizhao.com.library.db.utils;
+package news.leizhao.com.library.utils;
 
 /**
  * Title:StringUtils

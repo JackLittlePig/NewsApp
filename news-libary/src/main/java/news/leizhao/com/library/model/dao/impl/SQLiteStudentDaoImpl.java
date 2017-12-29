@@ -1,4 +1,5 @@
-package news.leizhao.com.library.db.dao.impl;
+package news.leizhao.com.library.model.dao.impl;
+
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,23 +9,23 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import news.leizhao.com.library.db.model.Student;
-import news.leizhao.com.library.db.sql.SQLiteCommand;
+import news.leizhao.com.library.model.db.sql.SQLiteCommand;
+import news.leizhao.com.library.model.entity.Student;
 
 /**
- * Title:SQLiteStudentDapImpl
+ * Title:SQLiteStudentDaoImpl
  * <p>
  * Description: 学生数据Dao 实现类 (全部用SQLite Command 实现)
  * </p>
  * Author 雷钊
  * Date 2017/12/29 10:38
  */
-public class SQLiteStudentDapImpl extends StudentDaoImpl {
+public class SQLiteStudentDaoImpl extends StudentDaoImpl {
 
 
-    private static final String TAG = SQLiteStudentDapImpl.class.getSimpleName();
+    private static final String TAG = SQLiteStudentDaoImpl.class.getSimpleName();
 
-    public SQLiteStudentDapImpl(Context context) {
+    public SQLiteStudentDaoImpl(Context context) {
         super(context);
     }
 
@@ -43,7 +44,7 @@ public class SQLiteStudentDapImpl extends StudentDaoImpl {
         List<Student> students = new ArrayList<>();
         while (cursor.moveToNext()) {
             Student student = new Student();
-            student.id = cursor.getInt(cursor.getColumnIndex("id"));
+            student.studentId = cursor.getInt(cursor.getColumnIndex("id"));
             student.name = cursor.getString(cursor.getColumnIndex("name"));
             student.age = cursor.getInt(cursor.getColumnIndex("age"));
             student.className = cursor.getString(cursor.getColumnIndex("classname"));

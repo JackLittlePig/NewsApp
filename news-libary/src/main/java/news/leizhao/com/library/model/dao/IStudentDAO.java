@@ -1,8 +1,9 @@
-package news.leizhao.com.library.db.dao;
+package news.leizhao.com.library.model.dao;
+
 
 import java.util.List;
 
-import news.leizhao.com.library.db.model.Student;
+import news.leizhao.com.library.model.entity.Student;
 
 /**
  * Title:IStudentDAO
@@ -53,5 +54,6 @@ public interface IStudentDAO {
      * @param name 学生姓名
      */
     public void deleteStudentFromName(String name);
+
 
 }
