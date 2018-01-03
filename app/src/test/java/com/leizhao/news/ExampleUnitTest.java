@@ -14,5 +14,6 @@ public class ExampleUnitTest {
     public void test() throws Exception {
         assertEquals(4, 2 + 2);
 
+        DimenTool.gen();
     }
 }

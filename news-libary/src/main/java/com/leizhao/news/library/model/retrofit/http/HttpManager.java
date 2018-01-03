@@ -2,13 +2,13 @@ package com.leizhao.news.library.model.retrofit.http;
 
 import android.util.Log;
 
-import com.trello.rxlifecycle.android.ActivityEvent;
 import com.leizhao.news.library.model.retrofit.Api.BaseApi;
 import com.leizhao.news.library.model.retrofit.RxRetrofitApp;
 import com.leizhao.news.library.model.retrofit.exception.RetryWhenNetworkException;
 import com.leizhao.news.library.model.retrofit.http.cookie.CookieInterceptor;
 import com.leizhao.news.library.model.retrofit.listener.HttpOnNextListener;
 import com.leizhao.news.library.model.retrofit.subscribers.ProgressSubscriber;
+import com.trello.rxlifecycle.android.ActivityEvent;
 
 import java.lang.ref.SoftReference;
 import java.util.concurrent.TimeUnit;
