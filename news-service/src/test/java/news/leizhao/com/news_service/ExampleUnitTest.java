@@ -1,4 +1,4 @@
-package news.leizhao.com.news_service;
+package com.leizhao.news.service;
 
 import org.junit.Test;
 

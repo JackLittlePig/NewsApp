@@ -8,9 +8,9 @@ import org.junit.Test;
 
 import java.util.List;
 
-import news.leizhao.com.library.model.dao.ITeacherDAO;
-import news.leizhao.com.library.model.dao.impl.TeacherDaoImpl;
-import news.leizhao.com.library.model.entity.Teacher;
+import com.leizhao.news.library.model.dao.ITeacherDAO;
+import com.leizhao.news.library.model.dao.impl.TeacherDaoImpl;
+import com.leizhao.news.library.model.entity.Teacher;
 
 /**
  * Title:

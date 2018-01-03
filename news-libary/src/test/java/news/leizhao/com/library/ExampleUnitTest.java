@@ -1,4 +1,4 @@
-package news.leizhao.com.library;
+package com.leizhao.news.library;
 
 import org.junit.Test;
 

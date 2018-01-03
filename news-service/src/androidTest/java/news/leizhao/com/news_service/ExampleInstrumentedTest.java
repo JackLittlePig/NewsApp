@@ -1,4 +1,4 @@
-package news.leizhao.com.news_service;
+package com.leizhao.news.service;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("news.leizhao.com.news_service.test", appContext.getPackageName());
+        assertEquals("com.leizhao.news.news_service.test", appContext.getPackageName());
     }
 }
