@@ -1,11 +1,16 @@
 package com.leizhao.news;
 
+import android.service.autofill.FillEventHistory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 /**
@@ -159,28 +164,6 @@ public class DimenTool {
     }
 
 
-    /**
-     * 创建文件
-     *
-     * @param fileName 文件名称
-     * @return 是否创建成功，成功则返回true
-     */
-    public static boolean createFile(String fileName) {
-        Boolean bool = false;
-        File file = new File(fileName);
-        try {
-            //如果文件不存在，则创建新的文件
-            while (!file.exists()) {
-                file.mkdir();
-            }
-            file.createNewFile();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return bool;
-    }
-
 
     /**
      * 写入方法
@@ -188,8 +171,13 @@ public class DimenTool {
 
     public static void writeFile(String file, String text) {
 
-        createFile(file);
-
+        String substring = file.substring(0, file.lastIndexOf("/"));
+        boolean mkdirs = new File(substring).mkdirs();
+        try {
+            boolean newFile = new File(file).createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         PrintWriter out = null;
 
