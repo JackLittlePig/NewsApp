@@ -1,5 +1,7 @@
 package com.leizhao.news;
 
+import com.leizhao.news.dimens.DimenTool;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,6 +16,6 @@ public class ExampleUnitTest {
     public void test() throws Exception {
         assertEquals(4, 2 + 2);
 
-        DimenTool.gen();
+        DimenTool.genDimensFolder("values-xxhdpi-" + (1920 / 3) + "x" + (1080 / 3), 3);
     }
 }

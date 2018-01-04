@@ -1,16 +1,11 @@
-package com.leizhao.news;
-
-import android.service.autofill.FillEventHistory;
+package com.leizhao.news.dimens;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 /**
@@ -164,7 +159,6 @@ public class DimenTool {
     }
 
 
-
     /**
      * 写入方法
      */
@@ -197,6 +191,87 @@ public class DimenTool {
         out.close();
 
     }
+
+
+    /**
+     * 生成 dimens 文件夹
+     *
+     * @param folderName 文件夹名称
+     * @param density    密度
+     */
+    public static void genDimensFolder(String folderName, float density) {
+        //以此文件夹下的dimens.xml文件内容为初始值参照
+        File file = new File("./app/src/main/res/values/dimens.xml");
+
+        BufferedReader reader = null;
+        StringBuilder newFolder = new StringBuilder();
+        try {
+
+            System.out.println("生成不同分辨率：");
+
+            reader = new BufferedReader(new FileReader(file));
+
+            String tempString;
+
+            int line = 1;
+
+            // 一次读入一行，直到读入null为文件结束
+
+            while ((tempString = reader.readLine()) != null) {
+                if (tempString.contains("</dimen>")) {
+                    //tempString = tempString.replaceAll(" ", "");
+                    String start = tempString.substring(0, tempString.indexOf(">") + 1);
+
+                    String end = tempString.substring(tempString.lastIndexOf("<") - 2);
+                    //截取<dimen></dimen>标签内的内容，从>右括号开始，到左括号减2，取得配置的数字
+                    Double num = Double.parseDouble
+                            (tempString.substring(tempString.indexOf(">") + 1,
+                                    tempString.indexOf("</dimen>") - 2));
+
+                    //根据不同的尺寸，计算新的值，拼接新的字符串，并且结尾处换行。
+                    newFolder.append(start).append(num / density).append(end).append("\r\n");
+                } else {
+                    newFolder.append(tempString).append("");
+                }
+
+                line++;
+
+            }
+
+            reader.close();
+            System.out.println("<!--  folderName -->");
+
+            System.out.println(newFolder.toString());
+
+            String sw240file = "./app/src/main/res/" + folderName + "/dimens.xml";
+
+            //将新的内容，写入到指定的文件中去
+            writeFile(sw240file, newFolder.toString());
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            if (reader != null) {
+
+                try {
+
+                    reader.close();
+
+                } catch (IOException e1) {
+
+                    e1.printStackTrace();
+
+                }
+
+            }
+
+        }
+
+
+    }
+
 
     public static void main(String[] args) {
 

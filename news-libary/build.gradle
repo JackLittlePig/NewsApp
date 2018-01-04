@@ -45,4 +45,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     /* okhttp3 */
     compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+    /* utilcode */
+    compile 'com.blankj:utilcode:1.10.0'
+
 }
